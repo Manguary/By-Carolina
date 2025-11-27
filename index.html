@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>By Carolina | Moda Atemporal</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- CORES --- */
+        :root {
+            --cor-fundo: #F9F7F2;      /* Marfim */
+            --cor-texto: #333333;      /* Carvão */
+            --cor-destaque: #C5A059;   /* Ouro Envelhecido */
+            --cor-suave: #EAE6DD;      /* Bege Claro */
+            --branco: #FFFFFF;
+        }
+
+        /* --- GERAL --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, .logo {
+            font-family: 'Playfair Display', serif;
+            font-weight: 400;
+        }
+
+        a { text-decoration: none; color: var(--cor-texto); transition: 0.3s; }
+        
+        /* --- HEADER --- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            background-color: var(--cor-fundo);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo { font-size: 1.8rem; }
+        .logo span { color: var(--cor-destaque); font-style: italic; font-weight: 700; }
+
+        nav ul { display: flex; list-style: none; gap: 2rem; }
+        
+        .btn-shop {
+            border: 1px solid var(--cor-texto);
+            padding: 0.5rem 1.5rem;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+        }
+
+        /* --- HERO SECTION (Área da Ana) --- */
+        .hero {
+            display: flex;
+            align-items: center; /* Centraliza verticalmente */
+            justify-content: space-between;
+            min-height: 85vh;
+            padding: 0 5%;
+            background-color: var(--cor-fundo);
+            overflow: hidden;
+        }
+
+        .hero-text {
+            flex: 1;
+            padding-right: 2rem;
+            z-index: 2;
+        }
+
+        .hero-text h1 {
+            font-size: 4.5rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--cor-texto);
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 2.5rem;
+            max-width: 400px;
+        }
+
+        .hero-image-container {
+            flex: 1;
+            height: 80vh;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Moldura elegante atrás da foto */
+        .hero-image-container::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 80%;
+            height: 95%;
+            border: 2px solid var(--cor-destaque);
+            z-index: 0;
+        }
+
+        /* A foto da Ana */
+        .hero-img {
+            max-height: 95%;
+            width: auto;
+            max-width: 100%;
+            object-fit: cover;
+            border-radius: 4px; /* Leve arredondamento */
+            box-shadow: -10px 10px 30px rgba(0,0,0,0.1); /* Sombra suave */
+            z-index: 1;
+            position: relative;
+        }
+
+        .cta-button {
+            background-color: var(--cor-texto);
+            color: var(--branco);
+            padding: 1rem 3rem;
+            font-family: 'Lato', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        
+        .cta-button:hover {
+            background-color: var(--cor-destaque);
+            transform: translateY(-3px);
+        }
+
+        /* --- RODAPÉ --- */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.8rem;
+            color: #888;
+            border-top: 1px solid #ddd;
+        }
+
+        /* --- CELULAR --- */
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column-reverse; /* Foto em cima, texto embaixo no celular */
+                padding: 2rem 5%;
+                text-align: center;
+                height: auto;
+            }
+
+            .hero-text { padding-right: 0; margin-top: 2rem; }
+            .hero-text h1 { font-size: 2.5rem; }
+            .hero-text p { margin: 0 auto 2rem auto; }
+            
+            .hero-image-container { height: 50vh; width: 100%; }
+            .hero-image-container::before { display: none; /* Remove borda no celular */ }
+            
+            nav { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">By <span>Carolina</span></div>
+        <nav>
+            <ul>
+                <li><a href="#">Coleção</a></li>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+        <a href="#" class="btn-shop">Sacola (0)</a>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <p>Elegância & Autenticidade</p>
+            <h1>A Assinatura do seu Estilo.</h1>
+            <p>Uma curadoria exclusiva de peças atemporais selecionadas por Ana Carolina.</p>
+            <button class="cta-button">Ver Coleção</button>
+        </div>
+        
+        <div class="hero-image-container">
+            <img src="ana.jpg" alt="Ana Carolina vestindo By Carolina" class="hero-img">
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 By Carolina. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
